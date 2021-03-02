@@ -84,10 +84,21 @@
     cursor: pointer;
 }
 
+.float__right {
+    float: right;
+}
+
 .display__controll {
     background-color: #908f8b;
-    width: 50%;
+    width: 70%;
     height: 50px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.display__controll > span {
+    color: #000000;
 }
 
 span {

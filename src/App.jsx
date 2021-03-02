@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import "./assets/App.css";
+import React from "react";
 import Drum from "./components/Drum";
 
-class App extends Component {
+class App extends React.Component {
     render() {
-      return (
-        <Drum />
-      );
+    	return (
+    		<Drum />
+      	);
     }
 }
 

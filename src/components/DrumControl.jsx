@@ -6,38 +6,32 @@ class DrumControl extends React.Component {
         super(props);
     }
 
-
-    handleChangeVolume = (e) => {
-        
-    }
-
-    componentDid = () => {
-
-    }
-
     render() {
+        const powerClassName = (this.props.power) ? "inner__select float__right" : "inner__select";
+        const typeClassName = (this.props.type) ? "inner__select float__right" : "inner__select";
+
         return(
             <div className="drum__right">
                 <div className="controll">
                     <span>Power</span>
                     <div className="controll__select">
-                        <div className="inner__select" onClick={this.props.handlePower}></div>
+                        <div className={powerClassName} onClick={this.props.handlePower}></div>
                     </div>
                 </div>
 
                 <div className="controll display__controll" id="display">
-                    <span></span>
+                    <span>{(this.props.power) ? this.props.displayTxt : ""}</span>
                 </div>
 
                 <div className="controll volume__controll">
                     <span>Volume</span>
-                    <input type="range" name="_volume" min="0" max="100" value="20" onChange={this.handleChangeVolume}/>
+                    <input type="range" name="_volume" min="0" max="100" />
                 </div>
 
                 <div className="controll">
                     <span>Type</span>
                     <div className="controll__select">
-                        <div className="inner__select"></div>
+                        <div className={typeClassName} onClick={this.props.handleType}></div>
                     </div>
                 </div>
             </div>

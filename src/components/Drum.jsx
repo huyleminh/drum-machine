@@ -8,7 +8,8 @@ class Drum extends React.Component {
         super(props)
         this.state = {
             _power: true,
-            _type: false
+            _type: false,
+            _txt: ""
         }
     }
 
@@ -24,12 +25,27 @@ class Drum extends React.Component {
         }))
     }
 
+    handleTxt = (txt) => {
+        this.setState({
+            _txt: txt
+        })
+    }
+
     render() {
-        console.log(this.state._power);
         return (
             <div className="drum__machine" id="drum-machine">
-                <DrumPad />
-                <DrumControl power={this.state._power} handlePower={this.handlePower} type={this._type} handleType={this.handleType}/>
+                <DrumPad 
+                    power = {this.state._power} 
+                    handleChangeTxt = {this.handleTxt}
+                    type = {this.state._type}
+                />
+                <DrumControl 
+                    power = {this.state._power} 
+                    handlePower = {this.handlePower} 
+                    type = {this.state._type} 
+                    handleType = {this.handleType}
+                    displayTxt = {this.state._txt}
+                />
             </div>
         )
     }
